@@ -1,0 +1,1545 @@
+ /* =========================
+        ABOUT SECTION
+    ========================== */
+
+    .about-section {
+        padding: 60px 0;
+        background: #f8f6f3;
+    }
+
+    /* =========================
+        SECTION TITLE
+    ========================== */
+
+    .section-title {
+        margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+        font-size: 55px;
+        font-weight: 700;
+        color: #1d1d1d;
+        margin-bottom: 15px;
+        font-family: serif;
+    }
+
+    .section-title p {
+        max-width: 750px;
+        margin: auto;
+        color: #666;
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .title-shape {
+        margin: 15px 0 20px;
+    }
+
+    .title-shape img {
+        width: 120px;
+    }
+
+    /* =========================
+        ABOUT CARD
+    ========================== */
+
+    .about-card {
+        background: #fff;
+        border: 6px double #d9c3a3;
+        border-radius: 5px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: 0.4s ease;
+    }
+
+    /* =========================
+        IMAGE
+    ========================== */
+
+    .about-image {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.6s ease;
+    }
+
+    .about-card:hover .about-image img {
+        transform: scale(1.05);
+    }
+
+    /* =========================
+        CONTENT
+    ========================== */
+
+    .about-content {
+        padding: 70px 60px;
+        background: #fffdfb;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+        color: #1d1d1d;
+        margin-bottom: 12px;
+        font-family: 'Raleway';
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    /* section line image */
+
+    .about-divider {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .about-divider img {
+        width: 210px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+        line-height: 2;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    /* =========================
+        BUTTON
+    ========================== */
+
+    .read-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        padding: 14px 34px;
+        border: 2px solid #b48a5a;
+        color: #b48a5a;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: 0.4s ease;
+        margin-top: 10px;
+    }
+
+    .read-btn:hover {
+        background: #b48a5a;
+        color: #fff;
+    }
+
+    /*======================================
+ HERO AREA
+========================================*/
+
+    .hero-area {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-area .single-slider {
+        position: relative;
+        height: 450px;
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* OVERLAY */
+
+    .hero-area .single-slider .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1;
+    }
+
+    /* CONTAINER */
+
+    .hero-area .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* HERO TEXT */
+
+    .hero-area .hero-text {
+        max-width: 950px;
+        margin: auto;
+
+        /* নিচে নামানো হয়েছে */
+        padding-top: 90px;
+
+        text-align: center;
+    }
+
+    /* BORDER IMAGE */
+
+    .hero-area .slider-border {
+        margin-top: 10px;
+        margin-bottom: 35px;
+    }
+
+    /* IMAGE WHITE */
+
+    .hero-area .slider-border img {
+        filter: brightness(0) invert(1);
+    }
+
+    /* TITLE */
+    .hero-area .hero-text h2 {
+        color: #fff;
+
+        font-family: 'Raleway', sans-serif;
+        font-size: 40px;
+        line-height: 58px;
+        font-weight: 700;
+
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+
+    /* HEADING */
+
+    .hero-area .hero-text h2 {
+        color: #fff;
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        font-family: 'Raleway', serif;
+    }
+
+    /* DESCRIPTION */
+
+    .hero-area .hero-text p {
+        color: #fff;
+        font-size: 17px;
+        line-height: 32px;
+        max-width: 760px;
+        margin: auto;
+    }
+
+    /* BUTTON AREA */
+
+    .hero-area .hero-text .button {
+        margin-top: 20px;
+        color: #d9c3a3;
+    }
+
+    /* BUTTON */
+
+    .hero-area .hero-text .button .read-btn {
+        display: inline-block;
+        padding: 18px 40px;
+        color: #d9c3a3;
+    }
+
+    /*======================================
+ RESPONSIVE
+========================================*/
+
+    @media(max-width:991px) {
+
+        .hero-area .single-slider {
+            height: 600px;
+        }
+
+        .hero-area .hero-text h2 {
+            font-size: 52px;
+            line-height: 64px;
+        }
+
+        .hero-area .slider-border img {
+            width: 320px;
+        }
+    }
+
+    @media(max-width:767px) {
+
+        .hero-area .single-slider {
+            height: 520px;
+        }
+
+        .hero-area .hero-text {
+            margin-top: -10px;
+        }
+
+        .hero-area .hero-text h2 {
+            font-size: 36px;
+            line-height: 48px;
+        }
+
+        .hero-area .hero-text p {
+            font-size: 15px;
+            line-height: 28px;
+        }
+
+        .hero-area .slider-border img {
+            width: 220px;
+        }
+    }
+/*======================================
+ TNS / OWL NAV BUTTON DESIGN
+========================================*/
+
+.hero-area .tns-controls button,
+.hero-area .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.35);
+
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+
+    font-size: 22px;
+    text-align: center;
+
+    transition: all .4s ease;
+    z-index: 99;
+
+    /* DOUBLE OUTLINE */
+    box-shadow: 0 0 0 5px rgba(255,255,255,0.12);
+}
+
+/* LEFT BUTTON */
+
+.hero-area .tns-controls button:first-child,
+.hero-area .owl-nav .owl-prev {
+    left: 35px;
+}
+
+/* RIGHT BUTTON */
+
+.hero-area .tns-controls button:last-child,
+.hero-area .owl-nav .owl-next {
+    right: 35px;
+}
+
+/* HOVER EFFECT */
+
+
+/* ICON ALIGN */
+
+.hero-area .owl-nav button span,
+.hero-area .tns-controls button span {
+    display: block;
+    line-height: 60px;
+}
+
+/* HIDE DEFAULT TEXT */
+
+.hero-area .owl-nav button {
+    font-size: 0 !important;
+}
+
+/* CUSTOM ARROW */
+
+.hero-area .owl-nav .owl-prev::before {
+    content: "\2190";
+    font-size: 22px;
+    color: #fff;
+}
+
+.hero-area .owl-nav .owl-next::before {
+    content: "\2192";
+    font-size: 22px;
+    color: #fff;
+}
+
+/* DOTS */
+
+.hero-area .owl-dots {
+    position: absolute;
+    width: 100%;
+    bottom: 35px;
+    text-align: center;
+}
+
+.hero-area .owl-dot span {
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background: rgba(255,255,255,0.5) !important;
+}
+
+.hero-area .owl-dot.active span {
+    background: #d9c3a3 !important;
+}
+
+/*======================================
+ RESPONSIVE
+========================================*/
+
+@media(max-width:991px){
+
+    .hero-area .tns-controls button,
+    .hero-area .owl-nav button {
+
+        width: 52px;
+        height: 52px;
+        line-height: 52px;
+
+        box-shadow: 0 0 0 4px rgba(255,255,255,0.10);
+    }
+
+    .hero-area .owl-nav button span,
+    .hero-area .tns-controls button span {
+        line-height: 48px;
+    }
+
+    .hero-area .owl-nav .owl-prev {
+        left: 18px;
+    }
+
+    .hero-area .owl-nav .owl-next {
+        right: 18px;
+    }
+}
+
+@media(max-width:767px){
+
+    .hero-area .tns-controls button,
+    .hero-area .owl-nav button {
+
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+
+        box-shadow: 0 0 0 3px rgba(255,255,255,0.10);
+    }
+
+    .hero-area .owl-nav .owl-prev::before,
+    .hero-area .owl-nav .owl-next::before {
+        font-size: 16px;
+    }
+
+    .hero-area .owl-nav .owl-prev {
+        left: 10px;
+    }
+
+    .hero-area .owl-nav .owl-next {
+        right: 10px;
+    }
+}
+
+  /* =========================
+        ABOUT SECTION
+    ========================== */
+
+    .about-section {
+        padding: 60px 0;
+        background: #f8f6f3;
+    }
+
+    /* =========================
+        SECTION TITLE
+    ========================== */
+
+    .section-title {
+        margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+        font-size: 55px;
+        font-weight: 700;
+        color: #1d1d1d;
+        margin-bottom: 15px;
+        font-family: serif;
+    }
+
+    .section-title p {
+        max-width: 750px;
+        margin: auto;
+        color: #666;
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    .title-shape {
+        margin: 15px 0 20px;
+    }
+
+    .title-shape img {
+        width: 120px;
+    }
+
+    /* =========================
+        ABOUT CARD
+    ========================== */
+
+    .about-card {
+        background: #fff;
+        border: 6px double #d9c3a3;
+        border-radius: 5px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: 0.4s ease;
+    }
+
+    /* =========================
+        IMAGE
+    ========================== */
+
+    .about-image {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: 0.6s ease;
+    }
+
+    .about-card:hover .about-image img {
+        transform: scale(1.05);
+    }
+
+    /* =========================
+        CONTENT
+    ========================== */
+
+    .about-content {
+        padding: 70px 60px;
+        background: #fffdfb;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about-content h2 {
+        font-size: 32px;
+        color: #1d1d1d;
+        margin-bottom: 12px;
+        font-family: 'Raleway';
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    /* section line image */
+
+    .about-divider {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .about-divider img {
+        width: 210px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+        line-height: 2;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    /* =========================
+        BUTTON
+    ========================== */
+
+    .read-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        padding: 14px 34px;
+        border: 2px solid #b48a5a;
+        color: #b48a5a;
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: 0.4s ease;
+        margin-top: 10px;
+    }
+
+    .read-btn:hover {
+        background: #b48a5a;
+        color: #fff;
+    }
+
+    /* =========================
+        SERVICES SECTION
+    ========================== */
+
+    .services-section {
+        padding: 0px 0;
+        background-color: #f7f4f4;
+    }
+
+    /* =========================
+        TITLE
+    ========================== */
+
+    .services-title {
+        margin-bottom: 60px;
+    }
+
+    .services-title h2 {
+        font-size: 30px;
+        color: #1d1d1d;
+        font-family: 'Raleway';
+        margin-bottom: 15px;
+    }
+
+    .services-divider {
+        margin-bottom: 20px;
+    }
+
+    .services-divider img {
+        width: 210px;
+    }
+
+    .services-title p {
+        max-width: 700px;
+        margin: auto;
+        color: #666;
+        font-size: 16px;
+        line-height: 1.9;
+    }
+
+    /* =========================
+        GRID
+    ========================== */
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 30px;
+    }
+
+    /* =========================
+    SERVICE BOX
+========================= */
+
+    .service-box {
+        background: #fffdfb;
+
+        border: 6px double #d9c3a3;
+
+        border-radius: 8px;
+
+        padding: 50px 30px;
+
+        text-align: center;
+
+        transition: 0.4s ease;
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+
+    /* ICON */
+
+    .service-icon {
+        font-size: 55px;
+        color: #b48a5a;
+
+        margin-bottom: 25px;
+
+        transition: 0.4s ease;
+    }
+
+    .service-box:hover .service-icon {
+        transform: scale(1.1);
+        color: #c89b6d;
+    }
+
+    /* Heading */
+
+    .service-box h4 {
+        font-size: 26px;
+        color: #1d1d1d;
+        font-family: 'Raleway';
+        margin: 0;
+    }
+
+    /* =========================
+        RESPONSIVE
+    ========================== */
+
+    @media(max-width:991px) {
+
+        .about-card {
+            grid-template-columns: 1fr;
+        }
+
+        .about-image img {
+            height: 420px;
+        }
+
+        .about-content {
+            padding: 50px 35px;
+        }
+    }
+
+    @media(max-width:768px) {
+
+        .about-section,
+        .services-section {
+            padding: 70px 0;
+        }
+
+        .section-title h2,
+        .services-title h2 {
+            font-size: 34px;
+        }
+
+        .section-title p,
+        .services-title p {
+            font-size: 15px;
+        }
+
+        .about-image img {
+            height: 320px;
+        }
+
+        .about-content {
+            padding: 40px 25px;
+        }
+
+        .about-content h2 {
+            font-size: 30px;
+        }
+
+        .about-content p {
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .service-box {
+            padding: 40px 20px;
+        }
+    }
+
+     /* =========================================
+   GALLERY SECTION
+========================================= */
+
+    .gallery-section {
+        padding: 60px 0;
+        background: #f8f4f5;
+    }
+
+    /* =========================================
+   TITLE
+========================================= */
+
+    .gallery-title {
+        margin-bottom: 60px;
+    }
+
+    .gallery-title span {
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: #9b7b67;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+    .gallery-title h2 {
+        font-size: 52px;
+        color: #111;
+        font-family: 'Raleway', serif;
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+
+    .gallery-shape {
+        margin-bottom: 24px;
+    }
+
+    .gallery-shape img {
+        width: 210px;
+    }
+
+    .gallery-title p {
+        font-size: 14px;
+        line-height: 30px;
+        color: #666;
+    }
+
+    /* =========================================
+   GALLERY ITEM
+========================================= */
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+
+    /* Hover Zoom */
+
+    .gallery-item:hover img {
+        transform: scale(1.08);
+    }
+
+    /* =========================================
+   OVERLAY
+========================================= */
+
+    .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: 0.4s;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+    }
+
+    /* Search Icon */
+
+    .gallery-overlay a {
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        color: #111;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .gallery-overlay a:hover {
+        background: #b99976;
+        color: #fff;
+    }
+
+     /* =========================================
+   SERVICES SECTION
+========================================= */
+
+    .services-area {
+        padding: 60px 0;
+        background: #f7f4f4;
+    }
+
+    /* =========================================
+   CARD
+========================================= */
+
+    .single-service {
+        background: #fff;
+        border: 1px solid #ececec;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        max-width: 360px;
+        margin: auto;
+    }
+
+
+
+    /* =========================================
+   LEFT ALPONA DESIGN
+========================================= */
+
+    .shape-left {
+        position: absolute;
+        left: -16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 140px;
+        z-index: 2;
+    }
+
+    .shape-left::before,
+    .shape-left::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #dddddd;
+        border-radius: 50%;
+        background: #fff;
+    }
+
+    .shape-left::before {
+        top: 15px;
+        left: 8px;
+    }
+
+    .shape-left::after {
+        bottom: 15px;
+        left: 8px;
+    }
+
+    .shape-left span {
+        position: absolute;
+        top: 50%;
+        left: 18px;
+        width: 1px;
+        height: 70px;
+        background: #dddddd;
+        transform: translateY(-50%);
+    }
+
+    /* =========================================
+   RIGHT ALPONA DESIGN
+========================================= */
+
+    .shape-right {
+        position: absolute;
+        right: -16px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 140px;
+        z-index: 2;
+    }
+
+    .shape-right::before,
+    .shape-right::after {
+        content: "";
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        border: 1px solid #dddddd;
+        border-radius: 50%;
+        background: #fff;
+    }
+
+    .shape-right::before {
+        top: 15px;
+        right: 8px;
+    }
+
+    .shape-right::after {
+        bottom: 15px;
+        right: 8px;
+    }
+
+    .shape-right span {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        width: 1px;
+        height: 70px;
+        background: #dddddd;
+        transform: translateY(-50%);
+    }
+
+    /* =========================================
+   IMAGE
+========================================= */
+
+    .service-image {
+        overflow: hidden;
+    }
+
+    .service-image img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+
+
+
+    /* =========================================
+   CONTENT
+========================================= */
+
+    .service-content {
+        padding: 28px 22px 40px;
+        text-align: center;
+        position: relative;
+        z-index: 3;
+    }
+
+    /* =========================================
+   TITLE
+========================================= */
+
+    .service-content h5 {
+        font-family: "Raleway", Sans-serif !important;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        color: #111111;
+        line-height: 30px;
+        margin-bottom: 5px;
+    }
+
+    /* =========================================
+   UNDERLINE
+========================================= */
+
+    .line {
+        width: 42px;
+        height: 1px;
+        background: #d6a28e;
+        margin: 5px auto 15px;
+    }
+
+    /* =========================================
+   DESCRIPTION
+========================================= */
+
+    .service-content p {
+        font-size: 13px;
+        line-height: 28px;
+        color: #666666;
+        margin-bottom: 20px;
+    }
+
+    /* =========================================
+   BUTTON
+========================================= */
+
+    .read-btn {
+        display: inline-block;
+        padding: 16px 28px;
+        border: 1px solid #b99976;
+        background: transparent;
+        color: #222222;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    /* Inner Border */
+
+    .read-btn::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border: 1px solid #b99976;
+        transition: 0.3s;
+    }
+
+    /* Hover */
+
+    .read-btn:hover {
+        border-color: #b99976;
+        color: #b99976;
+        background: transparent;
+    }
+
+    .read-btn:hover::before {
+        border-color: #b99976;
+    }
+
+    
+
+    /* Inner Border */
+
+    
+    /* =========================================
+   4 CORNER ALPONA DESIGN
+========================================= */
+
+    /* Top Left */
+    .single-service .corner-top-left {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 32px;
+        height: 32px;
+        border-top: 1px solid #d8d8d8;
+        border-left: 1px solid #d8d8d8;
+        border-top-left-radius: 18px;
+        z-index: 2;
+    }
+
+    /* Top Right */
+    .single-service .corner-top-right {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+        border-top: 1px solid #d8d8d8;
+        border-right: 1px solid #d8d8d8;
+        border-top-right-radius: 18px;
+        z-index: 2;
+    }
+
+    /* Bottom Left */
+    .single-service .corner-bottom-left {
+        position: absolute;
+        bottom: 12px;
+        left: 12px;
+        width: 32px;
+        height: 32px;
+        border-bottom: 1px solid #d8d8d8;
+        border-left: 1px solid #d8d8d8;
+        border-bottom-left-radius: 18px;
+        z-index: 2;
+    }
+
+    /* Bottom Right */
+    .single-service .corner-bottom-right {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        width: 32px;
+        height: 32px;
+        border-bottom: 1px solid #d8d8d8;
+        border-right: 1px solid #d8d8d8;
+        border-bottom-right-radius: 18px;
+        z-index: 2;
+    }
+
+    .title-shape {
+        margin: 18px 0 22px;
+    }
+
+    .title-shape img {
+        width: 120px;
+        height: auto;
+        opacity: 0.9;
+    }
+
+    /* =========================================
+   GALLERY SECTION
+========================================= */
+
+    .gallery-section {
+        padding: 60px 0;
+        background: #f8f4f5;
+    }
+
+    /* =========================================
+   TITLE
+========================================= */
+
+    .gallery-title {
+        margin-bottom: 60px;
+    }
+
+    .gallery-title span {
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: #9b7b67;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+    .gallery-title h2 {
+        font-size: 52px;
+        color: #111;
+        font-family: 'Raleway', serif;
+        font-weight: 400;
+        margin-bottom: 16px;
+    }
+
+    .gallery-shape {
+        margin-bottom: 24px;
+    }
+
+    .gallery-shape img {
+        width: 210px;
+    }
+
+    .gallery-title p {
+        font-size: 14px;
+        line-height: 30px;
+        color: #666;
+    }
+
+    /* =========================================
+   GALLERY ITEM
+========================================= */
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        transition: 0.5s;
+    }
+
+    /* Hover Zoom */
+
+    .gallery-item:hover img {
+        transform: scale(1.08);
+    }
+
+    /* =========================================
+   OVERLAY
+========================================= */
+
+    .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: 0.4s;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+    }
+
+    /* Search Icon */
+
+    .gallery-overlay a {
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        color: #111;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .gallery-overlay a:hover {
+        background: #b99976;
+        color: #fff;
+    }
+
+    /* =========================================
+   ABOUT SECTION
+========================================= */
+
+    .about-section {
+        padding: 0px 0;
+        background: #f7f4f4;
+    }
+
+    .about-section-abt {
+        padding: 90px 0;
+        background: #f7f4f4;
+    }
+
+    /* =========================================
+   TITLE
+========================================= */
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .section-title span {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 3px;
+        color: #9d7b66;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        font-weight: 500;
+    }
+
+    .section-title .top-text {
+        font-size: 12px;
+        letter-spacing: 3px;
+        color: #7a6b63;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+    }
+
+    .section-title h2 {
+        font-size: 58px;
+        color: #111;
+        font-family: 'Raleway', serif;
+        font-weight: 400;
+        margin-bottom: 18px;
+    }
+
+    .title-shape img {
+        width: 210px;
+    }
+
+    /* =========================================
+   ABOUT CARD
+========================================= */
+
+    .about-wrapper {
+        background: #fff;
+        border: 1px solid #e7e7e7;
+        padding: 10px;
+    }
+
+    /* =========================================
+   IMAGE
+========================================= */
+
+    .about-image {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    /* =========================================
+   CONTENT
+========================================= */
+
+    .about-content {
+        background: #fff;
+        padding: 70px 55px;
+        text-align: left;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .about-content p {
+        font-size: 15px;
+        line-height: 34px;
+        color: #555;
+        margin-bottom: 25px;
+    }
+
+    /* =========================================
+   RESPONSIVE
+========================================= */
+
+    @media(max-width:991px) {
+
+        .section-title h2 {
+            font-size: 42px;
+        }
+
+        .about-content {
+            padding: 50px 30px;
+        }
+
+    }
+
+    /* =========================================
+   CTA BLACK SECTION
+========================================= */
+
+    .cta-section {
+        padding: 60px 0;
+        background: #f7f7f7;
+    }
+
+    /* =========================================
+   BLACK BOX
+========================================= */
+
+    .cta-wrapper {
+        background: #0d0d0f;
+        border: 1px solid #3b3b3b;
+        padding: 70px 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Inner Border */
+
+    .cta-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        pointer-events: none;
+    }
+
+    /* =========================================
+   SHAPE
+========================================= */
+
+    .cta-shape {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        margin-bottom: 35px;
+    }
+
+    .cta-shape .line {
+        width: 140px;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.25);
+    }
+
+    .cta-shape img {
+        width: 600px;
+        opacity: 0.8;
+    }
+
+    /* =========================================
+   TITLE
+========================================= */
+
+    .cta-wrapper h4 {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 8px;
+        margin-bottom: 28px;
+        text-transform: uppercase;
+        font-family: "Raleway", Sans-serif;
+    }
+
+    /* =========================================
+   TEXT
+========================================= */
+
+    .cta-wrapper p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 14px;
+        line-height: 34px;
+        max-width: 760px;
+        margin: auto auto 38px;
+    }
+
+    /* =========================================
+   BUTTON
+========================================= */
+
+    .cta-btn {
+        display: inline-block;
+        padding: 11px 28px;
+        border: 1px solid #d8d8d8;
+        background: transparent;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .cta-btn::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        border: 1px solid #ececec;
+        transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+        display: inline-block;
+        padding: 11px 28px;
+        border: 1px solid #d8d8d8;
+        background: transparent;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+
+
+
+    /* =========================================
+   RESPONSIVE
+========================================= */
+
+    @media(max-width:768px) {
+
+        .cta-wrapper {
+            padding: 50px 25px;
+        }
+
+        .cta-shape .line {
+            width: 60px;
+        }
+
+        .cta-wrapper h4 {
+            font-size: 14px;
+            letter-spacing: 4px;
+        }
+
+    }
+
+        .section-title {
+        margin-bottom: 30px !important;
+    }
+
+    .service-details {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .details-content .thumb img {
+        border-radius: 10px;
+    }
+
+    
+.map-area{
+    overflow: hidden;
+    border: 1px solid #ececec;
+}
+
+.map-area iframe{
+    width: 100%;
+    height: 300px;
+    display: block;
+}
