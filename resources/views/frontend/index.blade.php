@@ -1,6 +1,4 @@
-<style>
-   
-</style>
+
 
 @extends('layouts.frontend.app')
 @section('content')
@@ -188,11 +186,9 @@
                                     {{ Str::limit($service->description, 180) }}
                                 </p>
 
-                                <a href="{{ url($service->slug) }}"
+                                <a href="{{ url('service-details/' . $service->slug) }}"
                                     class="read-btn">
-
                                     READ MORE
-
                                 </a>
 
                             </div>

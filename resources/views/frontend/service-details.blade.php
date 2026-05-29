@@ -1,6 +1,6 @@
-<style>
-
-</style>
+@php
+    $services = \App\Models\Services::latest()->get();
+@endphp
 
 @extends('layouts.frontend.app')
 @section('content')
@@ -15,11 +15,7 @@
                     <img src="{{ asset('assets/images/services/section-line.png') }}" alt="">
                 </div>
 
-                <p>
-                    Book the perfect wedding venue with Yuvik Weddings & Events.
-                    We provide elegant and budget-friendly venues to make your
-                    special day unforgettable.
-                </p>
+              
 
             </div>
             <div class="content">
@@ -28,46 +24,32 @@
                     <div class="col-lg-4 col-md-12 col-12">
                         <div class="service-sidebar">
 
-                            <div class="single-widget service-category">
-                                <h3>Service Category</h3>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            All Services <i class="lni lni-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            Cardiyiology <i class="lni lni-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            Urology <i class="lni lni-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            Neurology <i class="lni lni-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            Gastrology <i class="lni lni-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            Dentist <i class="lni lni-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)">
-                                            Orthopedic <i class="lni lni-arrow-right"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                           <div class="single-widget service-category">
+    <h3 class="text-center">What We Do</h3>
+
+    <img src="{{ asset('assets/images/services/section-line.png') }}"
+    alt="Logo"
+    style="
+        height: 15px;
+        width: auto;
+        display: block;
+        margin: 13px auto;
+        object-fit: contain;
+    ">
+    <ul>
+
+        
+        @foreach ($services as $service)
+            <li>
+                <a href="{{ route('service-details', $service->slug) }}">
+                    {{ $service->name }}
+                    <i class="lni lni-arrow-right"></i>
+                </a>
+            </li>
+        @endforeach
+
+    </ul>
+</div>
 
                         </div>
                     </div>
@@ -115,7 +97,7 @@
 
 
         <!-- Start Achievement Area -->
-        @include('frontend.cta')
-    <!-- End Achievement Area -->
+            @include('frontend.cta')
+         <!-- End Achievement Area -->
     </div>
 @endsection

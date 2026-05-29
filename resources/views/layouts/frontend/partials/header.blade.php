@@ -65,7 +65,7 @@
                     <!-- Start Navbar -->
                     <nav class="navbar navbar-expand-lg">
                         <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/logo/logo.svg" alt="Logo">
+                            <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="Logo">
                         </a>
                         <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -105,7 +105,7 @@
 
             <li class="nav-item">
 
-                <a href="{{ url($service->slug) }}">
+                <a href="{{ url('service-details/' . $service->slug) }}">
 
                     {{ $service->name }}
 

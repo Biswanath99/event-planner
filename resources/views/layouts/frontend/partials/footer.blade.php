@@ -16,7 +16,7 @@
                      <div class="single-footer f-about">
                          <div class="logo">
                              <a href="index.html">
-                                 <img src="assets/images/logo/white-logo.svg" alt="#">
+                                 <img src="{{ asset('assets/images/logo/white-logo.svg') }}" alt="#">
                              </a>
                          </div>
                          <p>We are not only a wedding planner in Kolkata. We offer more than 30+ design and event management services.</p>
