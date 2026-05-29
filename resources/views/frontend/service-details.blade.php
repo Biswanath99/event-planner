@@ -58,33 +58,12 @@
                             <div class="thumb">
                                 <img src="{{ asset('assets/images/services/Decoration.jpg') }}" alt="">
                             </div>
-                            <h3 class="title">Introduction to Neurology</h3>
-                            <p>Languages realizes why a new common language would be desirable: one could refuse to pay
-                                expensive translators. To achieve this, it would be necessary to have uniform grammar,
-                                pronunciation and more common words.</p>
+                            <h3 class="title">Lorem Ipsum</h3>
+                            
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software including versions of Lorem Ipsum.</p>
 
-                            <p>Languages realizes why a new common language would be desirable: one could refuse to pay
-                                expensive translators. To achieve this, it would be necessary to have uniform grammar,
-                                pronunciation and more common words. If several languages coalesce, the grammar of the
-                                resulting. would be desirable.</p>
-                            <h4 class="sub-title">Why Choose This Service</h4>
-                            <p>Sed ut perspiciatis undeomnis iste natus error sit voluptatem accusantium dolore Totam
-                                rem
-                                aperiam with a long list of products and never ending customer support.</p>
-                            <ul class="list">
-                                <li><i class="lni lni-checkmark"></i> Cerebrovascular disease, such as stroke</li>
-                                <li><i class="lni lni-checkmark"></i> Demyelinating diseases of the central nervous
-                                    system,
-                                    such as multiple sclerosis
-                                </li>
-                                <li><i class="lni lni-checkmark"></i> Headache disorders
-                                </li>
-                                <li><i class="lni lni-checkmark"></i> Infections of the brain and peripheral nervous
-                                    system
-                                </li>
-                                <li><i class="lni lni-checkmark"></i> Movement disorders, such as Parkinson's disease
-                                </li>
-                            </ul>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software including versions of Lorem Ipsum.</p>
+                            
 
 
 

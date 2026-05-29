@@ -1526,6 +1526,7 @@
     .service-details {
         padding-top: 60px;
         padding-bottom: 60px;
+        background-color: #f7f4f4;
     }
 
     .details-content .thumb img {
