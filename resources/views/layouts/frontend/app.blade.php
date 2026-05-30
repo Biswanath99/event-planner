@@ -43,13 +43,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 </head>
 
-<style>
-    .service-page .navbar-nav > .nav-item:hover > a {
-     color: #d9c3a3 !important;
-}
-</style>
 
-<body class="{{ request()->is('service-details/*') ? 'service-page' : '' }}">
+
+<body>
 
     <!-- Preloader -->
     <div class="preloader">
@@ -178,6 +174,17 @@
                 })
             );
         });
+    </script>
+
+    <script>
+        setTimeout(() => {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                alert.classList.remove('show');
+                alert.classList.add('fade');
+                setTimeout(() => alert.remove(), 500);
+            });
+        }, 3000);
     </script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

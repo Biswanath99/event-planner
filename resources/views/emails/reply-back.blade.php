@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reply from Library Management System</title>
+    <title>Reply from Event Planner Management System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="margin:0; padding:0; background-color:#f4f6f8; font-family:Arial, Helvetica, sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f6f8; padding:20px 0;">
+<body style="margin:0; padding:0; background-color:#f7f4f4; font-family:Arial, Helvetica, sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f7f4f4; padding:20px 0;">
     <tr>
         <td align="center">
             <table width="600" cellpadding="0" cellspacing="0"
@@ -16,7 +16,7 @@
                 <tr>
                     <td style="background-color:#0f3d2e; padding:20px; text-align:center;">
                         <h1 style="color:#ffffff; margin:0; font-size:22px;">
-                            Reply from Library Management System
+                            Reply from Event Planner Management System
                         </h1>
                     </td>
                 </tr>
@@ -53,14 +53,14 @@
 
                         <p style="font-size:14px; margin-top:30px;">
                             Regards,<br>
-                            <strong>Library Management System</strong>
+                            <strong>Event Planner Management System</strong>
                         </p>
                     </td>
                 </tr>
                 <tr>
-                    <td style="background-color:#f4f6f8; padding:15px; text-align:center;">
+                    <td style="background-color:#f7f4f4; padding:15px; text-align:center;">
                         <p style="font-size:12px; color:#777777; margin:0;">
-                            © {{ date('Y') }} Library Management System. All rights reserved.
+                            © {{ date('Y') }} Event Planner Management System. All rights reserved.
                         </p>
                     </td>
                 </tr>

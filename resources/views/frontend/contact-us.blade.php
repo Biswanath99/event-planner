@@ -41,56 +41,63 @@
 
                         <div class="form-title">
                             <h2>
-                                Feel free to contact us for any query.
+                                {{ $extra['intro_text'] ?? ' Feel free to contact us for any query.' }}
                             </h2>
                         </div>
 
-                        <form class="form"
-                            method="post"
-                            action="assets/mail/mail.php">
+                         @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
 
+                        <form class="form" action="{{ route('contact-us.store') }}" method="POST">
+                            @csrf
                             <div class="row">
 
                                 <div class="col-lg-6 col-12">
-                                    <div class="form-group">
-                                        <input type="text"
-                                            name="name"
-                                            placeholder="Your Name"
-                                            required>
+                                   <div class="form-group mb-3">
+                                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                                            placeholder="Name" value="{{ old('name') }}">
+                                        @error('name')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
                                 <div class="col-lg-6 col-12">
                                     <div class="form-group">
-                                        <input type="text"
-                                            name="subject"
-                                            placeholder="Your Subject"
-                                            required>
+                                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                                                placeholder="Email" value="{{ old('email') }}">
+                                            @error('email')
+                                                <div class="invalid-feedback">{{ $message }}</div>
+                                            @enderror
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group">
-                                        <input type="email"
-                                            name="email"
-                                            placeholder="Your Email"
-                                            required>
+                                <div class="col-lg-12 col-12">
+                                   <div class="form-group mb-3">
+                                        <input type="text" name="subject" class="form-control @error('subject') is-invalid @enderror"
+                                            placeholder="Subject" value="{{ old('subject') }}">
+                                        @error('subject')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6 col-12">
-                                    <div class="form-group">
-                                        <input type="text"
-                                            name="phone"
-                                            placeholder="Your Phone"
-                                            required>
-                                    </div>
-                                </div>
-
+                                
                                 <div class="col-12">
-                                    <div class="form-group message">
-                                        <textarea name="message"
-                                            placeholder="Your Message"></textarea>
+                                    <div class="form-group mb-3">
+                                        <textarea name="message" rows="5" class="form-control @error('message') is-invalid @enderror"
+                                            placeholder="Your Message">{{ old('message') }}</textarea>
+                                        @error('message')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                     <div class="col-12">
@@ -149,7 +156,7 @@
 
                         </div>
 
-                        {{-- Opening Hours --}}
+                       
                         <div class="single-info">
 
                             <div class="info-icon">

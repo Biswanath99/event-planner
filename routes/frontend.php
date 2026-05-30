@@ -10,5 +10,6 @@ use App\Http\Controllers\Frontend\{HomeController};
      Route::get('gallery-details'         ,[HomeController::class ,'galleryDetails'])->name('gallery-details');
      Route::get('about-us'                ,[HomeController::class ,'aboutUs'])->name('about-us');
      Route::get('contact-us'              ,[HomeController::class ,'contactUs'])->name('contact-us');
+     Route::post('contact-us'             ,[HomeController::class ,'store'])->name('contact-us.store');
      Route::get('faq'                     ,[HomeController::class ,'faq'])->name('faq');
      Route::get('appointment'             ,[HomeController::class ,'appointment'])->name('appointment');

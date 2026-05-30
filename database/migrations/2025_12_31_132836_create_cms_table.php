@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('cms', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('display_title');
             $table->string('slug')->unique();
             $table->longText('text_content')->nullable();
+            $table->string('border_image')->nullable();
             $table->string('image')->nullable();
             $table->json('extra')->nullable();
             $table->enum('status', ['draft', 'published'])->default('published');

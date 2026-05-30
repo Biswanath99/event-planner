@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body style="margin:0; padding:0; background-color:#f4f6f8; font-family:Arial, Helvetica, sans-serif;">
+<body style="margin:0; padding:0; background-color:#f7f4f4; font-family:Arial, Helvetica, sans-serif;">
 
-<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f6f8; padding:20px 0;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f7f4f4; padding:20px 0;">
     <tr>
         <td align="center">
 
@@ -65,16 +65,16 @@
 
                         <p style="font-size:14px; margin-top:30px;">
                             Regards,<br>
-                            <strong>Library Management System</strong>
+                            <strong>Event Planner Management System</strong>
                         </p>
                     </td>
                 </tr>
 
                 <!-- Footer -->
                 <tr>
-                    <td style="background-color:#f4f6f8; padding:15px; text-align:center;">
+                    <td style="background-color:#f7f4f4; padding:15px; text-align:center;">
                         <p style="font-size:12px; color:#777777; margin:0;">
-                            © {{ date('Y') }} Library Management System. All rights reserved.
+                            © {{ date('Y') }} Event Planner Management System. All rights reserved.
                         </p>
                     </td>
                 </tr>
