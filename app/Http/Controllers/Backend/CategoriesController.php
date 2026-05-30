@@ -13,13 +13,13 @@ class CategoriesController extends Controller
 {
     public function index()
     {
-        $categories = GalleryCategories::latest()->paginate(10);
+        $categories = GalleryCategories::latest()->paginate(5);
         return view('backend.categories.index', compact('categories'));
     }
 
     public function trash()
     {
-        $categories = GalleryCategories::onlyTrashed()->paginate(10);
+        $categories = GalleryCategories::onlyTrashed()->paginate(5);
         return view('backend.categories.trashed', compact('categories'));
     }
 

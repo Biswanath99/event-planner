@@ -13,7 +13,7 @@ class FaqController extends Controller
 {
     public function index()
     {
-        $faqs = Faq::latest()->paginate(10);
+        $faqs = Faq::latest()->paginate(5);
         return view('backend.faq.index', compact('faqs'));
     }
 

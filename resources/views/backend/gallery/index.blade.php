@@ -28,9 +28,7 @@
                 <i class="bx bx-plus"></i> Add Gallery
             </a>
 
-            <a href="{{ route('admin.gallery.trash') }}" class="btn btn-danger">
-                <i class="bx bx-trash"></i> Trashed Gallery
-            </a>
+            
         </div>
 
         <div class="card">

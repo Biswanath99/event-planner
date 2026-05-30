@@ -74,7 +74,7 @@
                     </a>
 
                     <button type="submit" class="btn btn-warning">
-                        <i class="bx bx-save"></i> Update FAQ
+                        <i class="bx bx-save"></i> Update
                     </button>
 
                 </div>

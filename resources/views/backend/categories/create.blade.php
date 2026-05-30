@@ -24,9 +24,9 @@
 
 
                         <div class="col-md-4 mb-3">
-                            <label class="form-label">Category Name <span class="text-danger">*</span></label>
+                            <label class="form-label">Name <span class="text-danger">*</span></label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                placeholder="Enter category name" value="{{ old('name') }}">
+                                placeholder="Enter name" value="{{ old('name') }}">
 
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -58,7 +58,7 @@
                         <div class="col-md-12 mb-3">
                             <label class="form-label">Description</label>
                             <textarea name="description" rows="4" class="form-control @error('description') is-invalid @enderror"
-                                placeholder="Category description">{{ old('description') }}</textarea>
+                                placeholder="description">{{ old('description') }}</textarea>
 
                             @error('description')
                                 <div class="invalid-feedback">{{ $message }}</div>

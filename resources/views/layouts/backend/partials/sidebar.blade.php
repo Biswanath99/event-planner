@@ -3,9 +3,9 @@
 
          <a href="#" class="app-brand-link">
              <span class="app-brand-logo demo">
-                 <img src="{{ asset('assets/img/logo.png') }}" alt="Library Logo" style="max-height: 40px;">
+         
              </span>
-             <span class="app-brand-text demo menu-text fw-bolder ms-2 text-uppercase">Event Planner</span>
+             <span class="app-brand-text demo menu-text fw-bolder ms-2 text-uppercase">EPMS</span>
          </a>
 
          <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -47,14 +47,14 @@
          <li class="menu-item {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
              <a href="{{ route('admin.categories.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-save"></i>
-                 <div>Gallery Categories</div>
+                 <div>Categories</div>
              </a>
          </li>
 
           <li class="menu-item {{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}">
              <a href="{{ route('admin.gallery.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-save"></i>
-                 <div>Galleries Images</div>
+                 <div>Images</div>
              </a>
          </li>
 

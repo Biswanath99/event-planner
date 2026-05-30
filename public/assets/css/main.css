@@ -1480,7 +1480,7 @@ ol {
 }
 
 .header .navbar .navbar-nav .nav-item .sub-menu a.active {
-  color: #fff;
+  color: #756853 ;
 }
 
 .sticky .navbar .navbar-nav .nav-item .sub-menu a.active {
@@ -1729,6 +1729,7 @@ ol {
   padding: 10px;
   min-width: 220px;
   background: #fff;
+
   -webkit-box-shadow: 0px 10px 20px #1414140e;
   box-shadow: 0px 10px 20px #1414140e;
   position: absolute;
@@ -1775,7 +1776,7 @@ ol {
 }
 
 .navbar-nav .nav-item .sub-menu .nav-item a:hover {
-  color: #fff;
+  color: #fff !important;
   padding-left: 20px !important;
 }
 
@@ -4112,7 +4113,7 @@ ol {
 }
 
 .service-details .content {
-  padding: 30px 0;
+  padding: 60px 0;
 }
 
 .service-details .content img {
@@ -4637,4 +4638,11 @@ ol {
 
 .accordion-item {
   margin-bottom: 20px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none !important;
 }

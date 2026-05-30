@@ -15,7 +15,7 @@ class ServiceDetailsController extends Controller
 
     public function index()
     {
-        $serviceDetails = ServiceDetails::with('service')->latest()->paginate(10);
+        $serviceDetails = ServiceDetails::with('service')->latest()->paginate(5);
         return view('backend.serviceDetails.index', compact('serviceDetails'));
     }
 

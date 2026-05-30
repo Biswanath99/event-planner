@@ -30,9 +30,7 @@
             <i class="bx bx-plus"></i> Add Category
         </a>
 
-        <a href="{{ route('admin.categories.trash') }}" class="btn btn-danger">
-            <i class="bx bx-trash"></i> Trashed Category
-        </a>
+        
     </div>
 
     <div class="card">

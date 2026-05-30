@@ -89,7 +89,7 @@
                     </tbody>
                 </table>
             </div>
-            @if ($cms->hasPages())
+           @if ($cms->hasPages())
                 <div class="card-footer d-flex justify-content-end">
                     {{ $cms->links() }}
                 </div>

@@ -12,7 +12,7 @@ class NewsLettersController extends Controller
 {
     public function index()
     {
-        $newsletters = NewsLetter::latest()->paginate(10);
+        $newsletters = NewsLetter::latest()->paginate(5);
         return view('backend.newsLetters.index',compact('newsletters'));
     }
 

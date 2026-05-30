@@ -41,34 +41,32 @@
                         <div class="right-content">
 
                            <div class="top-social">
-    <ul>
+                                <ul>
+                                    @foreach($contact['items'] ?? [] as $item)
 
-        @foreach($contact['items'] ?? [] as $item)
+                                        @if(in_array($item['type'], [
+                                            'facebook',
+                                            'twitter',
+                                            'instagram',
+                                            'youtube',
+                                            'pinterest'
+                                        ]))
 
-            @if(in_array($item['type'], [
-                'facebook',
-                'twitter',
-                'instagram',
-                'youtube',
-                'pinterest'
-            ]))
+                                            <li>
+                                                <a href="{{ $item['text'] }}"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer">
 
-                <li>
-                    <a href="{{ $item['text'] }}"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                                                    <i class="{{ $item['icon'] }}"></i>
 
-                        <i class="{{ $item['icon'] }}"></i>
+                                                </a>
+                                            </li>
 
-                    </a>
-                </li>
+                                        @endif
 
-            @endif
-
-        @endforeach
-
-    </ul>
-</div>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,67 +92,68 @@
                         </button>
                         <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ms-auto">
-                                  <li class="nav-item">
-                                    <a  class="active" href="{{ route('index') }}" aria-label="Toggle navigation">Home</a>
-                                </li>
-
-                                 <li class="nav-item">
-                                    <a href="{{ route('about-us') }}" aria-label="Toggle navigation">About Us</a>
-                                </li>
-
-
-                               <li class="nav-item">
-
-    <a class="page-scroll dd-menu collapsed"
-        href="javascript:void(0)"
-        data-bs-toggle="collapse"
-        data-bs-target="#submenu-1-2"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-
-        Services
-
-    </a>
-
-    <ul class="sub-menu collapse" id="submenu-1-2">
-
-        @forelse($services_card as $service)
-
-            <li class="nav-item">
-
-                <a href="{{ url('service-details/' . $service->slug) }}">
-
-                    {{ $service->name }}
-
-                </a>
-
-            </li>
-
-        @empty
-
-            <li class="nav-item">
-                <a href="#">
-                    No Services Found
-                </a>
-            </li>
-
-        @endforelse
-
-    </ul>
-
-</li>
-
-                                 <li class="nav-item">
-                                    <a href="{{ route('gallery') }}" aria-label="Toggle navigation">Gallery</a>
-                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="{{ route('contact-us') }}" aria-label="Toggle navigation">Contact Us</a>
+                                    <a class="{{ request()->routeIs('index') ? 'active' : '' }}"
+                                        href="{{ route('index') }}">
+                                        Home
+                                    </a>
                                 </li>
 
+                                <li class="nav-item">
+                                    <a class="{{ request()->routeIs('about-us') ? 'active' : '' }}"
+                                        href="{{ route('about-us') }}">
+                                        About Us
+                                    </a>
+                                </li>
 
+                                <li class="nav-item">
 
+                                    <a class="page-scroll dd-menu {{ request()->routeIs('service-details') ? 'active' : 'collapsed' }}"
+                                        href="javascript:void(0)"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#submenu-1-2"
+                                        aria-expanded="{{ request()->routeIs('service-details') ? 'true' : 'false' }}" >
+                                            
+                                        Services
+
+                                    </a>
+
+                                    <ul class="sub-menu collapse {{ request()->routeIs('service-details') ? 'show' : '' }}"
+                                        id="submenu-1-2">
+
+                                        @foreach($services_card as $service)
+
+                                            <li class="nav-item">
+
+                                                <a class="{{ request()->is('service-details/'.$service->slug) ? 'active' : '' }}"
+                                                    href="{{ url('service-details/'.$service->slug) }}">
+
+                                                    {{ $service->name }}
+
+                                                </a>
+
+                                            </li>
+
+                                        @endforeach
+
+                                    </ul>
+
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="{{ request()->routeIs('gallery') ? 'active' : '' }}"
+                                        href="{{ route('gallery') }}">
+                                        Gallery
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="{{ request()->routeIs('contact-us') ? 'active' : '' }}"
+                                        href="{{ route('contact-us') }}">
+                                        Contact Us
+                                    </a>
+                                </li>
 
                             </ul>
                         </div> <!-- navbar collapse -->

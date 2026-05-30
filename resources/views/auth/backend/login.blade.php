@@ -8,9 +8,8 @@
               <div class="app-brand justify-content-center">
                 <a href="#" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
-                    <img  src="{{ asset('assets/img/logo.png') }}" width="40"/>
+                    <img  src="{{ asset('assets/images/logo/logo.svg') }}" width="200"/>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder text-uppercase">LMS</span>
                 </a>
               </div>
 

@@ -63,8 +63,9 @@ class HomeController extends Controller
     public function faq()
     {
         $faq         = Cms::where('slug', 'faq')->where('status', 'published')->first();
+        $faq_ext     = $faq? json_decode($faq->extra, true): [];
         $faq_details = Faq::latest()->get();
-        return view('frontend.faq',compact('faq','faq_details'));
+        return view('frontend.faq',compact('faq','faq_ext','faq_details'));
     }
 
 

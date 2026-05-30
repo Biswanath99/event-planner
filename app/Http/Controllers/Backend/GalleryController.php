@@ -15,13 +15,13 @@ class GalleryController extends Controller
 
     public function index()
     {
-        $gallery = Gallery::latest()->paginate(10);
+        $gallery = Gallery::latest()->paginate(5);
         return view('backend.gallery.index', compact('gallery'));
     }
 
     public function trash()
     {
-        $gallery = Gallery::onlyTrashed()->paginate(10);
+        $gallery = Gallery::onlyTrashed()->paginate(5);
         return view('backend.gallery.trashed', compact('gallery'));
     }
 

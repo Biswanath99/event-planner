@@ -29,22 +29,23 @@
                      <div class="single-footer f-link">
                          <h3>Useful Links</h3>
                          <div class="row">
-                             <div class="col-lg-6 col-md-6 col-12">
-                                 <ul>
-                                     <li><a href="javascript:void(0)">Home</a></li>
-                                     <li><a href="javascript:void(0)">About Us</a></li>
-                                     <li><a href="javascript:void(0)">Gallery</a></li>
-                                     <li><a href="javascript:void(0)">Contact Us</a></li>
-                                     <li><a href="javascript:void(0)">Book Appointment</a></li>
-                                 </ul>
-                             </div>
-                             <div class="col-lg-6 col-md-6 col-12">
-                                 <ul>
-                                     <li><a href="javascript:void(0)">FAQ</a></li>
-                                     <li><a href="javascript:void(0)">Privacy & Policy</a></li>
-                                     <li><a href="javascript:void(0)">Terms & Conditions</a></li>
-                                 </ul>
-                             </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <ul>
+                                    <li><a href="{{ route('index') }}">Home</a></li>
+                                    <li><a href="{{ route('about-us') }}">About Us</a></li>
+                                    <li><a href="{{ route('gallery') }}">Gallery</a></li>
+                                    <li><a href="{{ route('contact-us') }}">Contact Us</a></li>
+                                    <li><a href="{{ route('appointment') }}">Book Appointment</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <ul>
+                                    <li><a href="{{ route('faq') }}">FAQ</a></li>
+                                    <li><a href="#">Privacy & Policy</a></li>
+                                    <li><a href="#">Terms & Conditions</a></li>
+                                </ul>
+                            </div>
                          </div>
                      </div>
                      <!-- End Single Widget -->
@@ -95,16 +96,15 @@
                  <div class="row">
                      <div class="col-lg-6 col-md-6 col-12">
                          <div class="content">
-                             <p class="copyright-text">Designed & Developed by <a href="#"
-                                     rel="nofollow" target="_blank">Riya Roy</a>
+                             <p class="copyright-text">Designed & Developed by <a href="https://github.com/riyaroy2002" rel="nofollow" target="_blank">Riya Roy</a>
                              </p>
                          </div>
                      </div>
                      <div class="col-lg-6 col-md-6 col-12">
                          <ul class="extra-link">
-                             <li><a href="javascript:void(0)">Terms & Conditions</a></li>
+                             <li><a href="#">Terms & Conditions</a></li>
                              <li><a href="{{ route('faq') }}">FAQ</a></li>
-                             <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                             <li><a href="#">Privacy Policy</a></li>
                          </ul>
                      </div>
                  </div>

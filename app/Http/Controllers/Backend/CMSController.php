@@ -15,7 +15,7 @@ class CMSController extends Controller
 
     public function index()
     {
-        $cms = Cms::latest()->paginate(10);
+        $cms = Cms::latest()->paginate(5);
         return view('backend.cms.index', compact('cms'));
     }
 

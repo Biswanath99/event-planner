@@ -80,7 +80,7 @@
                         <th>Description</th>
                         <th>Border Image</th>
                         <th>Banner Image</th>
-                        <th>Status</th>
+                        <th class="text-center">Status</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>

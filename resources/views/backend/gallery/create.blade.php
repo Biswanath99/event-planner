@@ -131,7 +131,7 @@
                             class="btn btn-success">
 
                         <i class="bx bx-save"></i>
-                        Save Gallery
+                        Save 
 
                     </button>
 

@@ -13,7 +13,9 @@
                             <img src="{{ asset($faq->image_url ?? 'assets/images/services/section-line.png') }}" alt="">
                         </div>
 
-                      
+                        <p>
+                            {{ $faq_ext['description'] ?? '' }}
+                        </p>
 
                     </div>
 

@@ -34,7 +34,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
         
-        <link rel="stylesheet" href="{{ asset('assets/css/custom-style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/custom-style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/LineIcons.2.0.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
@@ -43,7 +43,13 @@
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 </head>
 
-<body>
+<style>
+    .service-page .navbar-nav > .nav-item:hover > a {
+     color: #d9c3a3 !important;
+}
+</style>
+
+<body class="{{ request()->is('service-details/*') ? 'service-page' : '' }}">
 
     <!-- Preloader -->
     <div class="preloader">
