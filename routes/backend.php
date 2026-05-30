@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authentication\Backend\AuthController;
-use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController,InquiriesController,NewsLettersController,CategoriesController,BannerController,ServiceController};
+use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController,InquiriesController,NewsLettersController,CategoriesController,BannerController,ServiceController,ServiceDetailsController};
 
     Route::prefix('admin')->name('admin.')->group(function (){
 
@@ -29,6 +29,12 @@ use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController
             Route::post('create-service'              ,[ServiceController::class         , 'store'])->name('service.store');
             Route::get('edit-service/{id}'            ,[ServiceController::class         , 'edit'])->name('service.edit');
             Route::post('update-service/{id}'         ,[ServiceController::class         , 'update'])->name('service.update');
+
+            Route::get('service-details'              ,[ServiceDetailsController::class         , 'index'])->name('service-details.index');
+            Route::get('create-service-details'       ,[ServiceDetailsController::class         , 'create'])->name('service-details.create');
+            Route::post('create-service-details'      ,[ServiceDetailsController::class         , 'store'])->name('service-details.store');
+            Route::get('edit-service-details/{id}'    ,[ServiceDetailsController::class         , 'edit'])->name('service-details.edit');
+            Route::post('update-service-details/{id}' ,[ServiceDetailsController::class         , 'update'])->name('service-details.update');
 
             Route::get('categories'                     ,[CategoriesController::class , 'index'])->name('categories.index');
             Route::get('create-category'                ,[CategoriesController::class , 'create'])->name('categories.create');

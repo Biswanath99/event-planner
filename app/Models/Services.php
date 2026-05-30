@@ -23,8 +23,8 @@ class Services extends Model
         return ($this->border_image)? url()->to('/' . $this->border_image): null;
     }
 
-    public function details()
+    public function detail()
     {
-        return $this->hasMany(ServiceDetails::class);
+        return $this->hasOne(ServiceDetails::class, 'service_id');
     }
 }

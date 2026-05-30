@@ -37,6 +37,13 @@
              </a>
          </li>
 
+          <li class="menu-item {{ request()->routeIs('admin.service-details.*') ? 'active' : '' }}">
+             <a href="{{ route('admin.service-details.index') }}" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-save"></i>
+                 <div>Service Details</div>
+             </a>
+         </li>
+
          <li class="menu-item {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
              <a href="{{ route('admin.categories.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-save"></i>

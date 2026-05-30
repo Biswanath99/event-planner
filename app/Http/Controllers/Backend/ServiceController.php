@@ -44,7 +44,7 @@ class ServiceController extends Controller
             if($request->hasFile('border_image')){
                 $validated['border_image'] = $this->customSaveImage($request->file('border_image'),'service/border_image');
             }
-           Services::create($validated);
+            Services::create($validated);
             DB::commit();
             return redirect()->route('admin.service.index')->with('success','Service created successfully.');
         } catch (\Exception $e){

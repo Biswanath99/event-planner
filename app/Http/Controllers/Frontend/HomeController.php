@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Cms,Banner,Services};
+use App\Models\{Cms,Banner,Services,ServiceDetails};
 use Illuminate\Support\Facades\Route;
 
 
@@ -24,9 +24,13 @@ class HomeController extends Controller
         return view('frontend.index', compact('banners','we_do','we_do_ext','about','extra','gallery','gal_ext','services'));
     }
 
-    public function serviceDetails()
+    public function serviceDetails($slug)
     {
-        return view('frontend.service-details');
+        $service        = Services::where('slug', $slug)->firstOrFail();
+        $serviceDetails = ServiceDetails::where('service_id', $service->id)->first();
+        $services       = Services::all();
+
+        return view('frontend.service-details', compact('service','serviceDetails','services'));
     }
 
     public function gallery()
