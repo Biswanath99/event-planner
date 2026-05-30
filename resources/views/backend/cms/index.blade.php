@@ -59,9 +59,9 @@
 
                                 <td class="text-center">
                                     @if ($item->status == 'published')
-                                        <span class="badge bg-label-success me-1">Published</span>
+                                        <span class="badge bg-success me-1">Published</span>
                                     @else
-                                        <span class="badge bg-label-warning me-1">Draft</span>
+                                        <span class="badge bg-warning me-1">Draft</span>
                                     @endif
                                 </td>
 

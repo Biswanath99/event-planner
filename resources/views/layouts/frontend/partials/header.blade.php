@@ -1,4 +1,5 @@
 @php
+    $site_info     = \App\Models\Cms::where('slug', 'site-logo')->where('status', 'published')->first();
     $contactPage   = \App\Models\Cms::where('slug', 'top-contact')->where('status', 'published')->first();
     $contact       = $contactPage ? json_decode($contactPage->extra, true) : [];
     $email         = collect($contact['items'] ?? [])->firstWhere('type', 'email');
@@ -81,7 +82,7 @@
                     <!-- Start Navbar -->
                     <nav class="navbar navbar-expand-lg">
                         <a class="navbar-brand" href="index.html">
-                            <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="Logo">
+                           <img src="{{ optional($site_info)->image_url ?? asset('assets/images/logo/logo.png') }}" alt="Logo">
                         </a>
                         <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -158,7 +159,7 @@
                             </ul>
                         </div> <!-- navbar collapse -->
                         <div class="button add-list-button">
-                            <a class="read-btn" href="{{ route('appointment') }}" class="btn">Book Appointment</a>
+                            <a class="read-btn" href="{{ route('appointment') }}" class="btn"> <i class="lni lni-heart"></i> Book Appointment</a>
                         </div>
                     </nav>
                     <!-- End Navbar -->

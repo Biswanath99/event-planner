@@ -3,7 +3,8 @@
         ->where('status', 'published')
         ->first();
 
-    $contact = $contactPage ? json_decode($contactPage->extra, true) : [];
+    $contact   = $contactPage ? json_decode($contactPage->extra, true) : [];
+    $site_info = \App\Models\Cms::where('slug', 'site-logo')->where('status', 'published')->first();
 @endphp
  <footer class="footer overlay">
 
@@ -16,10 +17,10 @@
                      <div class="single-footer f-about">
                          <div class="logo">
                              <a href="index.html">
-                                 <img src="{{ asset('assets/images/logo/white-logo.svg') }}" alt="#">
+                                 <img src="{{ optional($site_info)->image_url ?? asset('assets/images/logo/logo.png') }}" alt="#">
                              </a>
                          </div>
-                         <p>We are not only a wedding planner in Kolkata. We offer more than 30+ design and event management services.</p>
+                         <p>{{$site_info->text_content}}</p>
 
                      </div>
                      <!-- End Single Widget -->

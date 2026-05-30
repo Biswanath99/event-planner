@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('banners', function (Blueprint $table) {
+        Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->string('sub_title')->nullable();
-            $table->string('title');
-            $table->string('border_image')->nullable();
-            $table->string('image');
-            $table->text('description')->nullable();
-            $table->enum('status', ['draft', 'published'])->default('published');
+            $table->string('name');
+            $table->string('email');
+            $table->string('contact_no');
+            $table->foreignId('service_id')->constrained('services')->onDelete('cascade');
+            $table->longText('message');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('banners');
+        Schema::dropIfExists('appointments');
     }
 };

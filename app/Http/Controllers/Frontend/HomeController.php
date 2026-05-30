@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Cms,Banner,Services,ServiceDetails,Faq,Contact};
+use App\Models\{Cms,Banner,Services,ServiceDetails,Faq,Contact,Appointment};
 use Illuminate\Support\Facades\Route;
 use App\Mail\ContactUs;
 use Illuminate\Support\Facades\DB;
@@ -63,11 +63,11 @@ class HomeController extends Controller
         return view('frontend.contact-us', compact('contact','extra'));
     }
 
-    public function store(Request $request)
+    public function contactStore(Request $request)
     {
         $validated = Validator::make($request->all(), [
             'name'    => ['required', 'string', 'max:50'],
-            'email'   => ['required', 'email' , 'max:50'],
+            'email'   => ['required', 'email', 'max:50'],
             'subject' => ['required', 'string', 'max:100'],
             'message' => ['required', 'string']
         ]);
@@ -78,20 +78,11 @@ class HomeController extends Controller
 
         DB::beginTransaction();
         try {
-
-            $validated = $validated->validated();
-            $contact = Contact::create([
-                'name'       => $validated['name'],
-                'email'      => $validated['email'],
-                'subject'    => $validated['subject'],
-                'message'    => $validated['message']
-            ]);
-
-            $data['name'] = $contact->name;
-            if (filter_var($validated['email'],FILTER_VALIDATE_EMAIL)) {
-                Mail::to($validated['email'])->send(new ContactUs($data));
+            $data         = $validated->validated();
+            $contact      = Contact::create($data);
+            if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+                Mail::to($data['email'])->send(new ContactUs($data));
             }
-
             DB::commit();
             return redirect()->route('contact-us')->with('success', 'Thank you for contacting with us.');
         } catch (\Exception $e) {
@@ -111,7 +102,48 @@ class HomeController extends Controller
 
     public function appointment()
     {
-        return view('frontend.appointment');
+        $services    = Services::all();
+        $appointment = Cms::where('slug', 'appointment')->where('status','published')->first();
+        $extra       = $appointment ? json_decode($appointment->extra, true) : [];
+        return view('frontend.appointment',compact('appointment','extra','services'));
+    }
+
+    public function appointmentStore(Request $request)
+    {
+        $validated = Validator::make($request->all(), [
+            'name'       => ['required', 'string', 'max:50'],
+            'email'      => ['required', 'email' , 'max:50'],
+            'contact_no' => ['required', 'string', 'max:20'],
+            'service_id' => ['required'],
+            'message'    => ['required', 'string']
+        ]);
+
+        if ($validated->fails()) {
+            return redirect()->back()->withErrors($validated)->withInput();
+        }
+
+        DB::beginTransaction();
+        try {
+
+            $validated = $validated->validated();
+            $appointment = Appointment::create([
+                'name'       => $validated['name'],
+                'email'      => $validated['email'],
+                'subject'    => $validated['subject'],
+                'message'    => $validated['message']
+            ]);
+
+            $data['name'] = $appointment->name;
+            if (filter_var($validated['email'],FILTER_VALIDATE_EMAIL)) {
+                Mail::to($validated['email'])->send(new Appointment($data));
+            }
+
+            DB::commit();
+            return redirect()->route('appointment')->with('success', 'Thank you for reaching with us.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->route('appointment')->with('error', 'Something went wrong. Please try again later.')->withInput();
+        }
     }
 
 }

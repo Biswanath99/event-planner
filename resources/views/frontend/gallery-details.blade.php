@@ -13,7 +13,6 @@
                 <div class="col-12">
                     <div class="section-title text-center">
 
-                        <span>WELCOME TO YUVIK WEDDINGS & EVENTS'S WORLD</span>
 
                         <h2>Gallery</h2>
 
