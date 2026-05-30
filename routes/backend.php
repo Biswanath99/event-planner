@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authentication\Backend\AuthController;
-use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController,InquiriesController,NewsLettersController,CategoriesController,BannerController,ServiceController,ServiceDetailsController,FaqController};
+use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController,InquiriesController,NewsLettersController,CategoriesController,BannerController,ServiceController,ServiceDetailsController,FaqController,AppointmentController};
 
     Route::prefix('admin')->name('admin.')->group(function (){
 
@@ -73,7 +73,9 @@ use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController
             Route::get('view/{id}'                     ,[InquiriesController::class  , 'view'])->name('inquiries.view');
             Route::post('reply-back/{id}'              ,[InquiriesController::class  , 'store'])->name('inquiries.reply-back.store');
 
+            Route::get('appointment'                   ,[AppointmentController::class  , 'index'])->name('appointment.index');
+            Route::get('appointment-view/{id}'         ,[AppointmentController::class  , 'view'])->name('appointment.view');
 
-            Route::post('logout'                ,[AuthController::class         , 'logout'])->name('logout');
+            Route::post('logout'                       ,[AuthController::class         , 'logout'])->name('logout');
         });
     });

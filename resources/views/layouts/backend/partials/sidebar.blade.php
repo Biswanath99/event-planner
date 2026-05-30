@@ -79,5 +79,12 @@
              </a>
          </li>
 
+         <li class="menu-item {{ request()->routeIs('admin.appointment.*') ? 'active' : '' }}">
+             <a href="{{ route('admin.appointment.index') }}" class="menu-link">
+                 <i class="menu-icon tf-icons bx bx-save"></i>
+                 <div>Appointments</div>
+             </a>
+         </li>
+
      </ul>
  </aside>
