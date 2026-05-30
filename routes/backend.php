@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authentication\Backend\AuthController;
-use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController,InquiriesController,NewsLettersController,CategoriesController,BannerController,ServiceController,ServiceDetailsController};
+use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController,InquiriesController,NewsLettersController,CategoriesController,BannerController,ServiceController,ServiceDetailsController,FaqController};
 
     Route::prefix('admin')->name('admin.')->group(function (){
 
@@ -62,15 +62,18 @@ use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController
             Route::get('edit-cms/{id}'                 ,[CMSController::class          , 'edit'])->name('cms.edit');
             Route::post('update-cms/{id}'              ,[CMSController::class          , 'update'])->name('cms.update');
 
-            
+            Route::get('faq'                           ,[FaqController::class          , 'index'])->name('faq.index');
+            Route::get('create-faq'                    ,[FaqController::class          , 'create'])->name('faq.create');
+            Route::post('create-faq'                   ,[FaqController::class          , 'store'])->name('faq.store');
+            Route::get('edit-faq/{id}'                 ,[FaqController::class          , 'edit'])->name('faq.edit');
+            Route::post('update-faq/{id}'              ,[FaqController::class          , 'update'])->name('faq.update');
 
-            Route::get('inquiries'              ,[InquiriesController::class  , 'index'])->name('inquiries.index');
-            Route::get('reply-back/{id}'        ,[InquiriesController::class  , 'replyBack'])->name('inquiries.reply-back');
-            Route::get('view/{id}'              ,[InquiriesController::class  , 'view'])->name('inquiries.view');
-            Route::post('reply-back/{id}'       ,[InquiriesController::class  , 'store'])->name('inquiries.reply-back.store');
+            Route::get('inquiries'                     ,[InquiriesController::class  , 'index'])->name('inquiries.index');
+            Route::get('reply-back/{id}'               ,[InquiriesController::class  , 'replyBack'])->name('inquiries.reply-back');
+            Route::get('view/{id}'                     ,[InquiriesController::class  , 'view'])->name('inquiries.view');
+            Route::post('reply-back/{id}'              ,[InquiriesController::class  , 'store'])->name('inquiries.reply-back.store');
 
 
-            Route::get('news-letters'           ,[NewsLettersController::class  , 'index'])->name('news-letters.index');
             Route::post('logout'                ,[AuthController::class         , 'logout'])->name('logout');
         });
     });

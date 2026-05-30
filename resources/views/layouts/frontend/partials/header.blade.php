@@ -40,17 +40,35 @@
                     <div class="col-lg-6 col-md-6 col-12">
                         <div class="right-content">
 
-                            <div class="top-social">
-                                <ul>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-facebook-filled"></i></a>
-                                    </li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-twitter-original"></i></a>
-                                    </li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-instagram"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-youtube"></i></a></li>
-                                    <li><a href="javascript:void(0)"><i class="lni lni-pinterest"></i></a></li>
-                                </ul>
-                            </div>
+                           <div class="top-social">
+    <ul>
+
+        @foreach($contact['items'] ?? [] as $item)
+
+            @if(in_array($item['type'], [
+                'facebook',
+                'twitter',
+                'instagram',
+                'youtube',
+                'pinterest'
+            ]))
+
+                <li>
+                    <a href="{{ $item['text'] }}"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        <i class="{{ $item['icon'] }}"></i>
+
+                    </a>
+                </li>
+
+            @endif
+
+        @endforeach
+
+    </ul>
+</div>
                         </div>
                     </div>
                 </div>

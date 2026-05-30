@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Cms,Banner,Services,ServiceDetails};
+use App\Models\{Cms,Banner,Services,ServiceDetails,Faq};
 use Illuminate\Support\Facades\Route;
 
 
@@ -62,7 +62,9 @@ class HomeController extends Controller
 
     public function faq()
     {
-        return view('frontend.faq');
+        $faq         = Cms::where('slug', 'faq')->where('status', 'published')->first();
+        $faq_details = Faq::latest()->get();
+        return view('frontend.faq',compact('faq','faq_details'));
     }
 
 

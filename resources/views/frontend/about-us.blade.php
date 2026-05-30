@@ -99,8 +99,7 @@
 
             {{-- IMAGE --}}
             <div class="services-divider">
-                <img src="{{ asset($services->image_url ?? 'assets/images/services/section-line.png') }}"
-                    alt="">
+                <img src="{{ asset($services->image_url ?? 'assets/images/services/section-line.png') }}" alt="">
             </div>
 
             {{-- JSON DESCRIPTION (text_content) --}}

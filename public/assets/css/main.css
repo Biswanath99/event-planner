@@ -980,7 +980,7 @@ ol {
 }
 
 .section {
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 100px;
   position: relative;
 }
@@ -4112,7 +4112,7 @@ ol {
 }
 
 .service-details .content {
-  padding: 100px 0;
+  padding: 30px 0;
 }
 
 .service-details .content img {
