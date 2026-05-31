@@ -1090,15 +1090,13 @@ ol {
   cursor: pointer;
   -webkit-transition: all .3s ease-out 0s;
   transition: all .3s ease-out 0s;
-  border-radius: 0;
+  border-radius: 50px;
 }
 
 .scroll-top:hover {
-  -webkit-box-shadow: 0 1rem 3rem rgba(35, 38, 45, 0.15) !important;
-  box-shadow: 0 1rem 3rem rgba(35, 38, 45, 0.15) !important;
-  -webkit-transform: translate3d(0, -5px, 0);
-  transform: translate3d(0, -5px, 0);
-  background-color: #081828;
+
+  background: #d9c3a3;
+  border-radius: 50px;
 }
 
 /* Overlay */
