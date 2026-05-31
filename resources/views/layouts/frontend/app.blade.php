@@ -152,6 +152,8 @@
     <script src="{{ asset('assets/js/imagesloaded.min.js') }}"></script>
     <script src="{{ asset('assets/js/isotope.min.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script type="text/javascript">
         //======== Hero Slider
         var slider = new tns({
@@ -264,8 +266,9 @@
         }, 3000);
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+
+   
     <script>
     document.addEventListener('DOMContentLoaded', function() {
 
