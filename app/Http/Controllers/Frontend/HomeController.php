@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\{Cms,Banner,Services,ServiceDetails,Faq,Contact,Appointment};
+use App\Models\{Cms,Banner,Services,ServiceDetails,Faq,Contact,Appointment,Categories,Images};
 use Illuminate\Support\Facades\Route;
 use App\Mail\ContactUs;
 use Illuminate\Support\Facades\DB;
@@ -23,8 +23,9 @@ class HomeController extends Controller
         $gallery   = Cms::where('slug', 'gallery')->where('status', 'published')->first();
         $gal_ext   = $gallery ? json_decode($gallery->extra, true) : [];
         $services  = Services::latest()->get();
+        $categories= Categories::latest()->get();
         
-        return view('frontend.index', compact('banners','we_do','we_do_ext','about','extra','gallery','gal_ext','services'));
+        return view('frontend.index', compact('banners','we_do','we_do_ext','about','extra','gallery','gal_ext','services','categories'));
     }
 
     public function serviceDetails($slug)
@@ -38,12 +39,18 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        return view('frontend.gallery');
+        $gallery   = Cms::where('slug', 'gallery')->where('status', 'published')->first();
+        $gal_ext   = $gallery ? json_decode($gallery->extra, true) : [];
+        $categories= Categories::latest()->get();
+        return view('frontend.gallery',compact('gallery','gal_ext','categories'));
     }
 
-    public function galleryDetails()
+    public function galleryImages($slug)
     {
-        return view('frontend.gallery-details');
+        $image_gallery     = Cms::where('slug', 'image-gallery')->where('status', 'published')->first();
+        $image_gallery_ext = $image_gallery? json_decode($image_gallery->extra, true): [];
+        $categories        = Categories::where('slug', $slug)->with('images')->firstOrFail();
+        return view('frontend.gallery-images',compact('categories','image_gallery','image_gallery_ext'));
     }
 
     public function aboutUs()
@@ -79,8 +86,8 @@ class HomeController extends Controller
         DB::beginTransaction();
         try {
 
-            $data         = $validated->validated();
-            $contact      = Contact::create($data);
+            $data    = $validated->validated();
+            $contact = Contact::create($data);
             if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
                 Mail::to($data['email'])->send(new ContactUs($data));
             }
@@ -126,9 +133,8 @@ class HomeController extends Controller
        DB::beginTransaction();
         try {
             
-            $data    = $validated->validated();
+            $data        = $validated->validated();
             $appointment = Appointment::create($data);
-           
             DB::commit();
             return redirect()->route('appointment')->with('success', 'Thank you for booking with us.');
         } catch (\Exception $e) {
@@ -137,4 +143,17 @@ class HomeController extends Controller
         }
     }
 
+    public function terms()
+    {
+        $terms      = Cms::where('slug', 'terms-conditions')->where('status', 'published')->first();
+        $terms_ext  = $terms? json_decode($terms->extra, true): [];
+        return view('frontend.terms',compact('terms','terms_ext'));
+    }
+
+    public function policy()
+    {
+        $policy     = Cms::where('slug', 'privacy-policy')->where('status', 'published')->first();
+        $policy_ext = $policy? json_decode($policy->extra, true): [];
+        return view('frontend.policy',compact('policy','policy_ext'));
+    }
 }

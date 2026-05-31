@@ -1077,61 +1077,7 @@
     /* Inner Border */
 
     
-    /* =========================================
-   4 CORNER ALPONA DESIGN
-========================================= */
-
-    /* Top Left */
-    .single-service .corner-top-left {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        width: 32px;
-        height: 32px;
-        border-top: 1px solid #d8d8d8;
-        border-left: 1px solid #d8d8d8;
-        border-top-left-radius: 18px;
-        z-index: 2;
-    }
-
-    /* Top Right */
-    .single-service .corner-top-right {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        width: 32px;
-        height: 32px;
-        border-top: 1px solid #d8d8d8;
-        border-right: 1px solid #d8d8d8;
-        border-top-right-radius: 18px;
-        z-index: 2;
-    }
-
-    /* Bottom Left */
-    .single-service .corner-bottom-left {
-        position: absolute;
-        bottom: 12px;
-        left: 12px;
-        width: 32px;
-        height: 32px;
-        border-bottom: 1px solid #d8d8d8;
-        border-left: 1px solid #d8d8d8;
-        border-bottom-left-radius: 18px;
-        z-index: 2;
-    }
-
-    /* Bottom Right */
-    .single-service .corner-bottom-right {
-        position: absolute;
-        bottom: 12px;
-        right: 12px;
-        width: 32px;
-        height: 32px;
-        border-bottom: 1px solid #d8d8d8;
-        border-right: 1px solid #d8d8d8;
-        border-bottom-right-radius: 18px;
-        z-index: 2;
-    }
+ 
 
     .title-shape {
         margin: 18px 0 22px;
@@ -1564,4 +1510,71 @@
 .contact-us .form .form-group select:focus {
     border-color: #d9c3a3;
     box-shadow: none;
+}
+
+.single-service{
+    position: relative;
+    background: #fff;
+    border: 2px solid #c89b3c;
+    padding: 8px;
+}
+
+/* Inner Border */
+.single-service::before{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid #c89b3c;
+    pointer-events: none;
+}
+
+/* Corner Design */
+.corner-top-left,
+.corner-top-right,
+.corner-bottom-left,
+.corner-bottom-right{
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    z-index: 10;
+}
+
+/* Top Left */
+.corner-top-left{
+    top: -2px;
+    left: -2px;
+    border-top: 4px solid #c89b3c;
+    border-left: 4px solid #c89b3c;
+}
+
+/* Top Right */
+.corner-top-right{
+    top: -2px;
+    right: -2px;
+    border-top: 4px solid #c89b3c;
+    border-right: 4px solid #c89b3c;
+}
+
+/* Bottom Left */
+.corner-bottom-left{
+    bottom: -2px;
+    left: -2px;
+    border-bottom: 4px solid #c89b3c;
+    border-left: 4px solid #c89b3c;
+}
+
+/* Bottom Right */
+.corner-bottom-right{
+    bottom: -2px;
+    right: -2px;
+    border-bottom: 4px solid #c89b3c;
+    border-right: 4px solid #c89b3c;
+}
+
+.service-image img{
+    width: 100%;
+    display: block;
 }

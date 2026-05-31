@@ -51,13 +51,14 @@
              </a>
          </li>
 
-          <li class="menu-item {{ request()->routeIs('admin.gallery.*') ? 'active' : '' }}">
-             <a href="{{ route('admin.gallery.index') }}" class="menu-link">
+         <li class="menu-item {{ request()->routeIs('admin.images.*') ? 'active' : '' }}">
+             <a href="{{ route('admin.images.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-save"></i>
                  <div>Images</div>
              </a>
          </li>
 
+          
          <li class="menu-item {{ request()->routeIs('admin.cms.*') ? 'active' : '' }}">
              <a href="{{ route('admin.cms.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-save"></i>

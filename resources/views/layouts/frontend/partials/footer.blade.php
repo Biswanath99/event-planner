@@ -43,8 +43,8 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <ul>
                                     <li><a href="{{ route('faq') }}">FAQ</a></li>
-                                    <li><a href="#">Privacy & Policy</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
+                                    <li><a href="{{ route('privacy-policy') }}">Privacy & Policy</a></li>
+                                    <li><a href="{{ route('terms-conditions') }}">Terms & Conditions</a></li>
                                 </ul>
                             </div>
                          </div>

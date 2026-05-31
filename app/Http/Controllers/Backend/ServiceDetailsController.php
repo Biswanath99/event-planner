@@ -45,7 +45,7 @@ class ServiceDetailsController extends Controller
 
             $validated = $validated->validated();
             if($request->hasFile('image')){
-                $validated['image'] = $this->customSaveImage($request->file('image'),'service_details/_details_image');
+                $validated['image'] = $this->customSaveImage($request->file('image'),'service_details/details_image');
             }
             ServiceDetails::create($validated);
             DB::commit();
@@ -88,7 +88,7 @@ class ServiceDetailsController extends Controller
                 if ( $serviceDetails->image && file_exists( $serviceDetails->image)) {
                     @unlink( $serviceDetails->image);
                 }
-                $validated['image'] = $this->customSaveImage($request->file('image'), 'service_details/_details_image');
+                $validated['image'] = $this->customSaveImage($request->file('image'), 'service_details/details_image');
             }
 
             $serviceDetails->update($validated);

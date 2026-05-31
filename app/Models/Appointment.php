@@ -14,8 +14,8 @@ class Appointment extends Model
         'name',
         'email',
         'contact_no',
-        'service_id',
-        'message'
+        'message',
+        'service_id'
     ];
 
     public function service()

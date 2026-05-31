@@ -41,9 +41,9 @@
 
                         <div class="form-title text-center">
 
-                            <h>
+                            <h5>
                                 {{ $extra['form_heading'] ?? 'Want us to plan your next big event? Contact us personally here.' }}
-                            </h>
+                            </h5>
 
                         </div>
 

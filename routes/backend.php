@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Authentication\Backend\AuthController;
-use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController,InquiriesController,NewsLettersController,CategoriesController,BannerController,ServiceController,ServiceDetailsController,FaqController,AppointmentController};
+use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController,InquiriesController,NewsLettersController,CategoriesController,BannerController,ServiceController,ServiceDetailsController,FaqController,AppointmentController,ImagesController};
 
     Route::prefix('admin')->name('admin.')->group(function (){
 
@@ -36,26 +36,18 @@ use App\Http\Controllers\Backend\{CMSController,GalleryController,HomeController
             Route::get('edit-service-details/{id}'    ,[ServiceDetailsController::class         , 'edit'])->name('service-details.edit');
             Route::post('update-service-details/{id}' ,[ServiceDetailsController::class         , 'update'])->name('service-details.update');
 
-            Route::get('categories'                     ,[CategoriesController::class , 'index'])->name('categories.index');
-            Route::get('create-category'                ,[CategoriesController::class , 'create'])->name('categories.create');
-            Route::post('create-category'               ,[CategoriesController::class , 'store'])->name('categories.store');
-            Route::get('edit-category/{id}'             ,[CategoriesController::class , 'edit'])->name('categories.edit');
-            Route::post('update-category/{id}'          ,[CategoriesController::class , 'update'])->name('categories.update');
-            Route::post('delete-category/{id}'          ,[CategoriesController::class , 'destroy'])->name('categories.delete');
-            Route::get('trash-category'                 ,[CategoriesController::class , 'trash'])->name('categories.trash');
-            Route::post('category-restore/{id}'         ,[CategoriesController::class , 'restore'])->name('categories.restore');
-            Route::post('category-permanent-delete/{id}',[CategoriesController::class ,'forceDelete'])->name('categories.permanent-delete');
+            Route::get('categories'                   ,[CategoriesController::class , 'index'])->name('categories.index');
+            Route::get('create-category'              ,[CategoriesController::class , 'create'])->name('categories.create');
+            Route::post('create-category'             ,[CategoriesController::class , 'store'])->name('categories.store');
+            Route::get('edit-category/{id}'           ,[CategoriesController::class , 'edit'])->name('categories.edit');
+            Route::post('update-category/{id}'        ,[CategoriesController::class , 'update'])->name('categories.update');
 
-            Route::get('gallery'                       ,[GalleryController::class    , 'index'])->name('gallery.index');
-            Route::get('create-gallery'                ,[GalleryController::class    , 'create'])->name('gallery.create');
-            Route::post('create-gallery'               ,[GalleryController::class    , 'store'])->name('gallery.store');
-            Route::get('edit-gallery/{id}'             ,[GalleryController::class    , 'edit'])->name('gallery.edit');
-            Route::post('update-gallery/{id}'          ,[GalleryController::class    , 'update'])->name('gallery.update');
-            Route::post('delete-gallery/{id}'          ,[GalleryController::class    , 'destroy'])->name('gallery.delete');
-            Route::get('trash-gallery'                 ,[GalleryController::class    , 'trash'])->name('gallery.trash');
-            Route::post('gallery-restore/{id}'         ,[GalleryController::class    , 'restore'])->name('gallery.restore');
-            Route::post('gallery-permanent-delete/{id}',[GalleryController::class    , 'forceDelete'])->name('gallery.permanent-delete');
-
+            Route::get('images'                    ,[ImagesController::class , 'index'])->name('images.index');
+            Route::get('create-image'              ,[ImagesController::class , 'create'])->name('images.create');
+            Route::post('create-image'             ,[ImagesController::class , 'store'])->name('images.store');
+            Route::get('edit-image/{id}'           ,[ImagesController::class , 'edit'])->name('images.edit');
+            Route::post('update-image/{id}'        ,[ImagesController::class , 'update'])->name('images.update');
+            
             Route::get('cms'                           ,[CMSController::class          , 'index'])->name('cms.index');
             Route::get('create-cms'                    ,[CMSController::class          , 'create'])->name('cms.create');
             Route::post('create-cms'                   ,[CMSController::class          , 'store'])->name('cms.store');

@@ -17,28 +17,30 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{ route('admin.categories.store') }}" method="POST">
+
+                <form action="{{ route('admin.categories.store') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
 
-
                         <div class="col-md-4 mb-3">
-                            <label class="form-label">Name <span class="text-danger">*</span></label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                placeholder="Enter name" value="{{ old('name') }}">
+                            <label class="form-label">Title <span class="text-danger">*</span></label>
+                            <input type="text" name="title"
+                                class="form-control @error('title') is-invalid @enderror"
+                                placeholder="Enter title" value="{{ old('title') }}">
 
-                            @error('name')
+                            @error('title')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
-
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Slug <span class="text-danger">*</span></label>
                             <input type="text" name="slug" id="slug"
-                                class="form-control @error('slug') is-invalid @enderror" placeholder="auto-generated slug"
-                                readonly value="{{ old('slug') }}">
+                                class="form-control @error('slug') is-invalid @enderror"
+                                placeholder="Auto-generated slug" readonly
+                                value="{{ old('slug') }}">
 
                             @error('slug')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -46,19 +48,20 @@
                         </div>
 
                         <div class="col-md-4 mb-3">
-                            <label class="form-label">Upload File</label>
-                            <input type="file" name="image" class="form-control @error('image') is-invalid @enderror">
+                            <label class="form-label">Image</label>
+                            <input type="file" name="image"
+                                class="form-control @error('image') is-invalid @enderror">
 
                             @error('image')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
-
                         <div class="col-md-12 mb-3">
                             <label class="form-label">Description</label>
-                            <textarea name="description" rows="4" class="form-control @error('description') is-invalid @enderror"
-                                placeholder="description">{{ old('description') }}</textarea>
+                            <textarea name="description" rows="4"
+                                class="form-control @error('description') is-invalid @enderror"
+                                placeholder="Enter description">{{ old('description') }}</textarea>
 
                             @error('description')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -85,15 +88,15 @@
 @endsection
 
 @push('scripts')
-    <script>
-        document.querySelector('input[name="name"]').addEventListener('input', function() {
-            let name = this.value;
+<script>
+    document.querySelector('input[name="title"]').addEventListener('input', function() {
+        let title = this.value;
 
-            document.getElementById('slug').value = name
-                .toLowerCase()
-                .trim()
-                .replace(/[^a-z0-9]+/g, '-')
-                .replace(/(^-|-$)/g, '');
-        });
-    </script>
+        document.getElementById('slug').value = title
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '');
+    });
+</script>
 @endpush

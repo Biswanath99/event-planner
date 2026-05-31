@@ -17,59 +17,65 @@
                     </div>
                 @endif
 
-                <form action="{{ route('admin.categories.update', $category->id) }}" method="POST">
+                <form action="{{ route('admin.categories.update', $category->id) }}"
+                    method="POST"
+                    enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
 
-
                         <div class="col-md-4 mb-3">
-                            <label class="form-label">Category Name <span class="text-danger">*</span></label>
-                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
-                                placeholder="Enter category name" value="{{ old('name', $category->name) }}">
+                            <label class="form-label">Title <span class="text-danger">*</span></label>
+                            <input type="text"
+                                   name="title"
+                                   class="form-control @error('title') is-invalid @enderror"
+                                   placeholder="Enter title"
+                                   value="{{ old('title', $category->title) }}">
 
-                            @error('name')
+                            @error('title')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
-
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Slug <span class="text-danger">*</span></label>
-                            <input type="text" name="slug" id="slug"
-                                class="form-control @error('slug') is-invalid @enderror" readonly
-                                value="{{ old('slug', $category->slug) }}">
+                            <input type="text"
+                                   name="slug"
+                                   id="slug"
+                                   class="form-control @error('slug') is-invalid @enderror"
+                                   readonly
+                                   value="{{ old('slug', $category->slug) }}">
 
                             @error('slug')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
-
                         <div class="col-md-4 mb-3">
-                            <label class="form-label">Status <span class="text-danger">*</span></label>
-                            <select name="status" class="form-select @error('status') is-invalid @enderror">
-                                <option value="">Select status</option>
-                                <option value="active"
-                                    {{ old('status', $category->status) === 'active' ? 'selected' : '' }}>
-                                    Active
-                                </option>
-                                <option value="inactive"
-                                    {{ old('status', $category->status) === 'inactive' ? 'selected' : '' }}>
-                                    Inactive
-                                </option>
-                            </select>
+                            <label class="form-label">Image</label>
+                            <input type="file"
+                                   name="image"
+                                   class="form-control @error('image') is-invalid @enderror">
 
-                            @error('status')
+                            @error('image')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
-                        </div>
 
+                            @if ($category->image)
+                                <div class="mt-2">
+                                    <img src="{{$category->image_url }}"
+                                         alt="Category Image"
+                                         width="100">
+                                </div>
+                            @endif
+                        </div>
 
                         <div class="col-md-12 mb-3">
                             <label class="form-label">Description</label>
-                            <textarea name="description" rows="4" class="form-control @error('description') is-invalid @enderror"
-                                placeholder="Category description">{{ old('description', $category->description) }}</textarea>
+                            <textarea name="description"
+                                      rows="4"
+                                      class="form-control @error('description') is-invalid @enderror"
+                                      placeholder="Category description">{{ old('description', $category->description) }}</textarea>
 
                             @error('description')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -77,7 +83,6 @@
                         </div>
 
                     </div>
-
 
                     <div class="d-flex justify-content-end gap-2 mt-3">
                         <a href="{{ route('admin.categories.index') }}" class="btn btn-dark">
@@ -96,14 +101,15 @@
 @endsection
 
 @push('scripts')
-    <script>
-        document.querySelector('input[name="name"]').addEventListener('input', function() {
-            let name = this.value;
-            document.getElementById('slug').value = name
-                .toLowerCase()
-                .trim()
-                .replace(/[^a-z0-9]+/g, '-')
-                .replace(/(^-|-$)/g, '');
-        });
-    </script>
+<script>
+    document.querySelector('input[name="title"]').addEventListener('input', function() {
+        let title = this.value;
+
+        document.getElementById('slug').value = title
+            .toLowerCase()
+            .trim()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '');
+    });
+</script>
 @endpush

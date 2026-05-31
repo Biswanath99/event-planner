@@ -320,195 +320,40 @@
             </div>
 
             <!-- Gallery -->
-              <div class="row">
-                <!-- Card -->
-                <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="single-service">
+            <div class="row">
+                @foreach($categories as $category)
+                    <div class="col-lg-4 col-md-6 col-12 mb-4">
+                        <div class="single-service">
 
-                        <div class="corner-top-left"></div>
-                        <div class="corner-top-right"></div>
-                        <div class="corner-bottom-left"></div>
-                        <div class="corner-bottom-right"></div>
+                            <div class="corner-top-left"></div>
+                            <div class="corner-top-right"></div>
+                            <div class="corner-bottom-left"></div>
+                            <div class="corner-bottom-right"></div>
 
-                        <!-- Image -->
-                        <div class="service-image">
-                            <img src="{{ asset('assets/images/services/Decoration.jpg') }}" alt="">
+                            <!-- Image -->
+                            <div class="service-image">
+                                <img src="{{$category->image_url }}"
+                                    alt="{{ $category->title }}">
+                            </div>
+
+                            <!-- Content -->
+                            <div class="service-content">
+
+                                <h5>{{ $category->title }}</h5>
+
+                                <div class="line"></div>
+
+                                <a href="{{ url('gallery-images/' . $category->slug) }}"
+                                class="read-btn">
+                                    View All
+                                </a>
+
+                            </div>
+
                         </div>
-
-                        <!-- Content -->
-                        <div class="service-content">
-
-                            <h5>Wedding Decoration</h5>
-
-                            <div class="line"></div>
-
-
-
-                            <a href="{{ route('gallery-details') }}" class="read-btn">
-                                View All
-                            </a>
-
-                        </div>
-
                     </div>
-                </div>
-
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="single-service">
-
-                        <div class="corner-top-left"></div>
-                        <div class="corner-top-right"></div>
-                        <div class="corner-bottom-left"></div>
-                        <div class="corner-bottom-right"></div>
-
-                        <!-- Image -->
-                        <div class="service-image">
-                            <img src="{{ asset('assets/images/services/Decoration.jpg') }}" alt="">
-                        </div>
-
-                        <!-- Content -->
-                        <div class="service-content">
-
-                            <h5>Wedding Decoration</h5>
-
-                            <div class="line"></div>
-
-
-
-                            <a href="{{ route('gallery-details') }}" class="read-btn">
-                                View All
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="single-service">
-
-                        <div class="corner-top-left"></div>
-                        <div class="corner-top-right"></div>
-                        <div class="corner-bottom-left"></div>
-                        <div class="corner-bottom-right"></div>
-
-                        <!-- Image -->
-                        <div class="service-image">
-                            <img src="{{ asset('assets/images/services/Decoration.jpg') }}" alt="">
-                        </div>
-
-                        <!-- Content -->
-                        <div class="service-content">
-
-                            <h5>Wedding Decoration</h5>
-
-                            <div class="line"></div>
-
-
-
-                            <a href="{{ route('gallery-details') }}" class="read-btn">
-                                View All
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="single-service">
-
-                        <div class="corner-top-left"></div>
-                        <div class="corner-top-right"></div>
-                        <div class="corner-bottom-left"></div>
-                        <div class="corner-bottom-right"></div>
-
-                        <!-- Image -->
-                        <div class="service-image">
-                            <img src="{{ asset('assets/images/services/Decoration.jpg') }}" alt="">
-                        </div>
-
-                        <!-- Content -->
-                        <div class="service-content">
-
-                            <h5>Wedding Decoration</h5>
-
-                            <div class="line"></div>
-
-
-
-                            <a href="{{ route('gallery-details') }}" class="read-btn">
-                                View All
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="single-service">
-
-                        <div class="corner-top-left"></div>
-                        <div class="corner-top-right"></div>
-                        <div class="corner-bottom-left"></div>
-                        <div class="corner-bottom-right"></div>
-
-                        <!-- Image -->
-                        <div class="service-image">
-                            <img src="{{ asset('assets/images/services/Decoration.jpg') }}" alt="">
-                        </div>
-
-                        <!-- Content -->
-                        <div class="service-content">
-
-                            <h5>Wedding Decoration</h5>
-
-                            <div class="line"></div>
-
-
-
-                            <a href="{{ route('gallery-details') }}" class="read-btn">
-                                View All
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                  <div class="col-lg-4 col-md-6 col-12 mb-4">
-                    <div class="single-service">
-
-                        <div class="corner-top-left"></div>
-                        <div class="corner-top-right"></div>
-                        <div class="corner-bottom-left"></div>
-                        <div class="corner-bottom-right"></div>
-
-                        <!-- Image -->
-                        <div class="service-image">
-                            <img src="{{ asset('assets/images/services/Decoration.jpg') }}" alt="">
-                        </div>
-
-                        <!-- Content -->
-                        <div class="service-content">
-
-                            <h5>Wedding Decoration</h5>
-
-                            <div class="line"></div>
-
-
-
-                            <a href="{{ route('gallery-details') }}" class="read-btn">
-                                View All
-                            </a>
-
-                        </div>
-
-                    </div>
-                </div>
-
-              </div>
+                @endforeach
+            </div>
 
               
 
