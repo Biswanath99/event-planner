@@ -34,7 +34,7 @@
                             <th>Email</th>
                             <th>Subject</th>
                             <th>Message</th>
-                            <th class="text-center">Replied Message</th>
+                            <th>Replied Message</th>
                             <th class="text-center">Status</th>
                             <th class="text-center">Action</th>
                         </tr>
