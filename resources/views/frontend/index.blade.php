@@ -53,7 +53,7 @@
                                 <a class="read-btn text-white" href="{{ route('appointment') }}"
                                 >
 
-                                    Book Appointment
+                                  <i class="lni lni-heart"></i>  Book Appointment
 
                                 </a>
 
