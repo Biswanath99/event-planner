@@ -47,14 +47,14 @@
          <li class="menu-item {{ request()->routeIs('admin.categories.*') ? 'active' : '' }}">
              <a href="{{ route('admin.categories.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-save"></i>
-                 <div>Categories</div>
+                 <div>Gallery Categories</div>
              </a>
          </li>
 
          <li class="menu-item {{ request()->routeIs('admin.images.*') ? 'active' : '' }}">
              <a href="{{ route('admin.images.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-save"></i>
-                 <div>Images</div>
+                 <div>Gallery Images</div>
              </a>
          </li>
 
