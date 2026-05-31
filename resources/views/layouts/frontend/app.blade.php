@@ -41,6 +41,63 @@
     <link rel="stylesheet" href="{{ asset('assets/css/tiny-slider.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/glightbox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <style>
+    .cookie-banner {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        max-width: 900px;
+        margin: auto;
+        background: #1d1d1d;
+        color: #fff;
+        padding: 18px 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+        z-index: 99999;
+    }
+
+    .cookie-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .cookie-content p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .cookie-content a {
+        color: #ffc107;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .cookie-content a:hover {
+        text-decoration: underline;
+    }
+
+    .cookie-buttons {
+        display: flex;
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+        .cookie-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .cookie-buttons {
+            justify-content: center;
+            width: 100%;
+        }
+    }
+</style>
 </head>
 
 
@@ -65,6 +122,26 @@
     <a href="#" class="scroll-top">
         <i class="lni lni-chevron-up"></i>
     </a>
+    <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+        <p>
+            We use cookies to improve your browsing experience, analyze site traffic,
+            and personalize content. By clicking "Accept", you consent to our use of cookies.
+            <a href="{{ route('privacy-policy') }}">Read Cookie Policy</a>
+        </p>
+
+        <div class="cookie-buttons">
+            <button id="accept-cookies" class="btn btn-success btn-sm">
+                Accept
+            </button>
+
+            <button id="reject-cookies" class="btn btn-outline-light btn-sm">
+                Reject
+            </button>
+        </div>
+    </div>
+</div>
+
 
     <!-- ========================= JS here ========================= -->
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
@@ -189,6 +266,30 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const banner = document.getElementById('cookie-banner');
+
+        // Check if user already made a choice
+        if (localStorage.getItem('cookieConsent')) {
+            banner.style.display = 'none';
+        }
+
+        // Accept cookies
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            banner.style.display = 'none';
+        });
+
+        // Reject cookies
+        document.getElementById('reject-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            banner.style.display = 'none';
+        });
+
+    });
+</script>
 
 </body>
 
