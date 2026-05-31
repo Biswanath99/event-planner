@@ -50,6 +50,7 @@
                         <th>#</th>
                         <th>Question</th>
                         <th>Answer</th>
+                        <th class="text-center">Status</th>
                         <th class="text-center">Action</th>
                     </tr>
                 </thead>
@@ -69,8 +70,16 @@
                             </td>
 
                             <td>
-                                {{ Str::limit(strip_tags($item->description), 80) }}
+                                {{ Str::limit(strip_tags($item->description), 50) }}
                             </td>
+
+                            <td class="text-center">
+                                    @if ($item->status == 'published')
+                                        <span class="badge bg-success me-1">Published</span>
+                                    @else
+                                        <span class="badge bg-warning me-1">Draft</span>
+                                    @endif
+                                </td>
 
                             <td class="text-center">
 
