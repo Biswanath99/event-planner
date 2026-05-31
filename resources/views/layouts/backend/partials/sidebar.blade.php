@@ -55,6 +55,7 @@
              <a href="{{ route('admin.images.index') }}" class="menu-link">
                  <i class="menu-icon tf-icons bx bx-save"></i>
                  <div>Gallery Images</div>
+                 
              </a>
          </li>
 
