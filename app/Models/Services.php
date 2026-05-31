@@ -27,4 +27,9 @@ class Services extends Model
     {
         return $this->hasOne(ServiceDetails::class, 'service_id');
     }
+
+    public function appointment()
+    {
+        return $this->hasMany(Appointment::class);
+    }
 }

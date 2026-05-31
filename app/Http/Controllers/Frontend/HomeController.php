@@ -78,6 +78,7 @@ class HomeController extends Controller
 
         DB::beginTransaction();
         try {
+
             $data         = $validated->validated();
             $contact      = Contact::create($data);
             if (filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
@@ -122,27 +123,17 @@ class HomeController extends Controller
             return redirect()->back()->withErrors($validated)->withInput();
         }
 
-        DB::beginTransaction();
+       DB::beginTransaction();
         try {
-
-            $validated = $validated->validated();
-            $appointment = Appointment::create([
-                'name'       => $validated['name'],
-                'email'      => $validated['email'],
-                'subject'    => $validated['subject'],
-                'message'    => $validated['message']
-            ]);
-
-            $data['name'] = $appointment->name;
-            if (filter_var($validated['email'],FILTER_VALIDATE_EMAIL)) {
-                Mail::to($validated['email'])->send(new Appointment($data));
-            }
-
+            
+            $data    = $validated->validated();
+            $appointment = Appointment::create($data);
+           
             DB::commit();
-            return redirect()->route('appointment')->with('success', 'Thank you for reaching with us.');
+            return redirect()->route('appointment')->with('success', 'Thank you for booking with us.');
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->route('appointment')->with('error', 'Something went wrong. Please try again later.')->withInput();
+            return redirect()->route('appointment')->with('error', 'Something went wrong. Please try again later.'.$e)->withInput();
         }
     }
 
